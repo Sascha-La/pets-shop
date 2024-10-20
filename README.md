@@ -10,16 +10,17 @@
 - Название [товара](https://github.com/CodegirlSchool/pets-shop/blob/main/script.js#L2) (`title`) помести в `h1`,
 описание (`description`) — в `p`, картинку (`img`) — в одноименный тег, цену (`price`) — в `span` с классом `"price"` и массив тегов `tags` — в `div class="tags"`
   ```html
-  <div class="shop-item">
-    <img src="">
-    <div class="content">
-      <div class="tags"></div>
-      <h1></h1>
-      <p></p>
-      <span class="price"></span>
+    <template id="item-template">
+    <div class="shop-item">
+      <img src="">
+      <div class="content">
+        <div class="tags"></div>
+        <h1></h1>
+        <p></p>
+        <span class="price"></span>
+      </div>
     </div>
-  </div>
-  ```
+  </template>
 - Отрисованные объекты подставь внутрь элемента с `id="shop-items"`
 
 
