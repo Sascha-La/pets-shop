@@ -84,10 +84,6 @@
         },
     ];
 
-    items.map((item) => console.log(item));
-
-    // items.map({ title, description, tags, price, img }) {
-
     const elem = document.querySelector("#item-template");
     const container = document.querySelector("#shop-items");
 
@@ -96,11 +92,21 @@
 
         newElem.querySelector('h1').textContent = title;
         newElem.querySelector('p').textContent = description;
+        newElem.querySelector('img').src = img;
         newElem.querySelector('.price').textContent = price;
-        newElem.querySelector('.tags').textContent = tags;
+        const tagsContainer = newElem.querySelector('.tags');
 
-        return newElem(`${title} ${description} ${tags} ${price} ${img}`);
+        tags.forEach(item => {
+            const tag = document.createElement('span');
+            tag.classList.add('tag');
+            tag.textContent = item;
+            tagsContainer.append(tag);
+        });
+
+        return newElem;
     };
 
-    const reNwElem = newElemByTemlate();
-    container.append(reNwElem);
+    items.forEach(item => {
+        const itemCard = newElemByTemlate(item.title, item.description, item.tags, item.price, item.img);
+        container.append(itemCard);
+    })
